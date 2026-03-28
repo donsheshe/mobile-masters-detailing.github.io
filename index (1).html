@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>[Your Name] Caravan Detailing — Mobile Caravan Detailing Perth</title>
+<meta name="description" content="Perth's #1 mobile caravan detailing service. We come to you anywhere in Perth — from Joondalup to Mandurah. Professional results, upfront pricing."/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0D0F0F;--ink2:#1A1D1D;--ink3:#252929;
+  --border:rgba(255,255,255,0.08);--flame:#E55B0A;--flame2:#FF7030;
+  --flame-glow:rgba(229,91,10,0.22);--gold:#D4A847;
+  --white:#FFFFFF;--off:#F7F5F0;--muted:#7A8080;
+  --display:'Syne',sans-serif;--body:'Manrope',sans-serif;
+  --max:1180px;--rad:10px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--ink);color:var(--white);
+  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--ink2)}
+::-webkit-scrollbar-thumb{background:var(--flame);border-radius:2px}
+a{color:inherit;text-decoration:none}
+
+/* TOP BAR */
+.topbar{background:var(--flame);padding:0.45rem 2rem;text-align:center;
+  font-size:0.8rem;font-weight:600;letter-spacing:0.04em;color:#fff}
+.topbar a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:300;padding:0 2rem;
+  transition:background 0.3s,box-shadow 0.3s}
+nav.scrolled{background:rgba(13,15,15,0.97);backdrop-filter:blur(18px);
+  box-shadow:0 1px 0 var(--border)}
+.nav-in{max-width:var(--max);margin:auto;height:74px;
+  display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--display);font-size:1.3rem;font-weight:800;
+  display:flex;align-items:center;gap:0.55rem;cursor:pointer}
+.logo-mark{width:32px;height:32px;background:var(--flame);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{font-size:0.8rem;font-weight:600;letter-spacing:0.06em;
+  text-transform:uppercase;color:var(--muted);transition:color 0.2s;cursor:pointer}
+.nav-links a:hover{color:#fff}
+.nav-phone-lnk{color:#fff!important;display:flex;align-items:center;gap:0.4rem}
+.nav-phone-lnk::before{content:'📞';font-size:0.75rem}
+.nav-btn{background:var(--flame);color:#fff!important;padding:0.55rem 1.3rem;
+  border-radius:var(--rad);font-weight:700!important;
+  transition:background 0.2s,transform 0.15s!important}
+.nav-btn:hover{background:var(--flame2)!important;transform:translateY(-1px)}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;padding:0 2rem}
+.hero-bg{position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 70% at 65% 40%,rgba(229,91,10,0.20) 0%,transparent 65%),
+    radial-gradient(ellipse 40% 60% at 10% 70%,rgba(229,91,10,0.07) 0%,transparent 60%),var(--ink);
+  animation:hpulse 9s ease-in-out infinite alternate}
+@keyframes hpulse{0%{opacity:.85}100%{opacity:1}}
+.hero-mesh{position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,0.022) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.022) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black 20%,transparent 100%)}
+.hero-wm{position:absolute;right:-1rem;bottom:-4rem;
+  font-family:var(--display);font-size:clamp(9rem,20vw,19rem);font-weight:800;
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,0.035);
+  pointer-events:none;user-select:none;line-height:1}
+.hero-in{max-width:var(--max);margin:auto;position:relative;z-index:1;
+  padding-top:74px;width:100%;display:grid;grid-template-columns:1.1fr 0.9fr;
+  gap:4rem;align-items:center}
+
+.h-badge{display:inline-flex;align-items:center;gap:0.55rem;
+  border:1px solid rgba(229,91,10,0.45);background:rgba(229,91,10,0.1);
+  color:#FFAA70;font-size:0.73rem;font-weight:700;letter-spacing:0.14em;
+  text-transform:uppercase;padding:0.38rem 1.1rem;border-radius:100px;
+  margin-bottom:1.6rem;animation:fin 0.6s ease both}
+.h-badge-dot{width:6px;height:6px;background:var(--flame);border-radius:50%;
+  animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+@keyframes fin{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+.h1{font-family:var(--display);font-size:clamp(3.2rem,7vw,6.8rem);
+  font-weight:800;line-height:0.95;letter-spacing:-0.01em;margin-bottom:1.6rem;
+  animation:fin 0.65s 0.08s ease both}
+.h1-flame{color:var(--flame);display:block}
+.h1-out{-webkit-text-stroke:1.5px rgba(255,255,255,0.28);color:transparent;display:block}
+
+.hero-sub{font-size:1rem;color:var(--muted);max-width:510px;
+  line-height:1.9;margin-bottom:1.6rem;font-weight:300;animation:fin 0.65s 0.16s ease both}
+
+.hero-phone{display:flex;align-items:center;gap:1rem;
+  margin-bottom:2.5rem;animation:fin 0.65s 0.22s ease both}
+.hero-phone-num{font-family:var(--display);font-size:2rem;font-weight:800;color:#fff}
+.hero-phone-lbl{font-size:0.77rem;color:var(--muted);font-weight:500}
+.hero-phone-ico{width:48px;height:48px;background:var(--flame);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;
+  box-shadow:0 6px 20px rgba(229,91,10,0.42)}
+
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fin 0.65s 0.28s ease both}
+.btn-fire{background:var(--flame);color:#fff;padding:0.9rem 2rem;border-radius:var(--rad);
+  font-weight:700;font-size:0.88rem;letter-spacing:0.05em;text-transform:uppercase;
+  border:none;cursor:pointer;display:inline-flex;align-items:center;gap:0.45rem;
+  font-family:var(--body);transition:background 0.2s,transform 0.15s,box-shadow 0.2s;
+  box-shadow:0 8px 28px rgba(229,91,10,0.38)}
+.btn-fire:hover{background:var(--flame2);transform:translateY(-2px);box-shadow:0 14px 36px rgba(229,91,10,0.5)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,0.22);color:#fff;background:none;
+  padding:0.9rem 2rem;border-radius:var(--rad);font-weight:600;font-size:0.88rem;
+  cursor:pointer;font-family:var(--body);display:inline-flex;align-items:center;gap:0.45rem;
+  transition:border-color 0.2s,background 0.2s}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.55);background:rgba(255,255,255,0.05)}
+
+.hero-trust{display:flex;flex-wrap:wrap;gap:1.25rem;margin-top:3rem;
+  padding-top:2.5rem;border-top:1px solid var(--border);animation:fin 0.65s 0.34s ease both}
+.ht-item{display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;color:var(--muted)}
+.ht-item strong{color:#fff;font-weight:600}
+.ht-dot{width:5px;height:5px;background:var(--flame);border-radius:50%;flex-shrink:0}
+
+/* hero right card */
+.hero-card{background:var(--ink2);border:1px solid var(--border);
+  border-radius:16px;overflow:hidden;animation:fin 0.8s 0.3s ease both;position:relative}
+.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--flame),var(--flame2),transparent)}
+.hc-ph{background:linear-gradient(135deg,rgba(229,91,10,0.18),rgba(229,91,10,0.04));
+  aspect-ratio:16/10;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;color:var(--muted);gap:0.5rem;font-size:0.82rem;
+  border-bottom:1px solid var(--border)}
+.hc-ph-ico{font-size:3rem;opacity:0.32}
+.hc-ph-hint{font-size:0.72rem;color:rgba(255,255,255,0.18)}
+.hc-body{padding:1.5rem}
+.hc-stars{color:var(--gold);font-size:1.1rem;letter-spacing:0.05em;margin-bottom:0.5rem}
+.hc-quote{font-size:0.88rem;color:rgba(255,255,255,0.68);line-height:1.75;
+  font-weight:300;font-style:italic;margin-bottom:1rem}
+.hc-author{font-size:0.8rem;color:var(--muted);font-weight:600}
+.hc-stats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border)}
+.hc-stat{padding:1rem 1.25rem;border-right:1px solid var(--border)}
+.hc-stat:last-child{border-right:none}
+.hcs-n{font-family:var(--display);font-size:1.8rem;font-weight:800;color:#fff;line-height:1}
+.hcs-n span{color:var(--flame)}
+.hcs-l{font-size:0.72rem;color:var(--muted);margin-top:0.15rem;font-weight:500}
+
+/* STRIP */
+.strip{background:var(--flame);overflow:hidden}
+.strip-track{display:flex;animation:stripgo 20s linear infinite;white-space:nowrap}
+.strip-track:hover{animation-play-state:paused}
+.strip-item{padding:0.8rem 2.5rem;font-family:var(--display);font-size:1rem;
+  font-weight:800;letter-spacing:0.07em;color:var(--ink);flex-shrink:0;
+  display:flex;align-items:center;gap:1rem}
+.s-dot{opacity:0.4}
+@keyframes stripgo{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SECTIONS */
+.sec{padding:6rem 2rem}
+.wrap{max-width:var(--max);margin:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;
+  font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--flame);margin-bottom:0.8rem}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--flame);border-radius:1px;display:inline-block}
+.sh2{font-family:var(--display);font-size:clamp(2.4rem,4.5vw,3.8rem);
+  font-weight:800;line-height:1;letter-spacing:-0.01em;margin-bottom:1.25rem}
+.ssub{font-size:0.97rem;color:var(--muted);max-width:580px;line-height:1.85;font-weight:300}
+.rv{opacity:0;transform:translateY(26px);transition:opacity 0.55s ease,transform 0.55s ease}
+.rv.vis{opacity:1;transform:none}
+
+/* ABOUT */
+.sec-about{background:var(--ink2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-ph{border-radius:14px;aspect-ratio:4/5;
+  background:linear-gradient(145deg,rgba(229,91,10,0.18),rgba(229,91,10,0.03));
+  border:1px solid var(--border);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:0.75rem;
+  color:var(--muted);font-size:0.85rem;position:relative;overflow:hidden}
+.about-ph-ico{font-size:3.5rem;opacity:0.3}
+.about-ph-hint{font-size:0.75rem;color:rgba(255,255,255,0.18)}
+.about-float{position:absolute;bottom:-1px;left:-1px;right:-1px;
+  background:linear-gradient(0deg,rgba(229,91,10,0.92),transparent);
+  padding:1.5rem 1.5rem 1.75rem}
+.af-num{font-family:var(--display);font-size:2.5rem;font-weight:800;color:#fff;line-height:1}
+.af-lbl{font-size:0.82rem;color:rgba(255,255,255,0.75);margin-top:0.2rem;font-weight:500}
+.about-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:0.85rem}
+.about-list li{display:flex;align-items:flex-start;gap:0.8rem;
+  font-size:0.93rem;color:rgba(255,255,255,0.7);font-weight:300}
+.a-tick{width:20px;height:20px;flex-shrink:0;background:rgba(229,91,10,0.15);
+  border:1px solid rgba(229,91,10,0.35);border-radius:5px;
+  display:inline-flex;align-items:center;justify-content:center;
+  color:var(--flame);font-size:0.7rem;font-weight:800;margin-top:2px}
+
+/* SERVICES */
+.sec-services{background:var(--ink)}
+.pkg-hdr{display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.pkg{background:var(--ink2);border:1px solid var(--border);border-radius:14px;
+  padding:2rem;position:relative;overflow:hidden;transition:border-color 0.25s,transform 0.25s}
+.pkg:hover{border-color:rgba(229,91,10,0.45);transform:translateY(-5px)}
+.pkg.best{border-color:var(--flame);
+  background:linear-gradient(155deg,rgba(229,91,10,0.12),var(--ink2) 55%)}
+.pkg-pop{position:absolute;top:0;right:1.5rem;background:var(--flame);
+  color:#fff;font-size:0.67rem;font-weight:800;letter-spacing:0.1em;
+  text-transform:uppercase;padding:0.28rem 0.75rem;border-radius:0 0 7px 7px}
+.pkg-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.25rem}
+.pkg-ico{width:50px;height:50px;background:rgba(229,91,10,0.12);
+  border:1px solid rgba(229,91,10,0.28);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.pkg-pr-wrap{text-align:right}
+.pkg-from{font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.09em}
+.pkg-pr{font-family:var(--display);font-size:2.3rem;font-weight:800;color:#fff;line-height:1}
+.pkg-pr sup{font-size:1rem;font-family:var(--body);vertical-align:super}
+.pkg-name{font-family:var(--display);font-size:1.7rem;font-weight:800;
+  letter-spacing:0.02em;margin-bottom:0.5rem}
+.pkg-desc{font-size:0.86rem;color:var(--muted);line-height:1.72;
+  margin-bottom:1.5rem;font-weight:300}
+.pkg-hr{height:1px;background:var(--border);margin-bottom:1.25rem}
+.pkg-list{list-style:none;display:flex;flex-direction:column;gap:0.55rem}
+.pkg-list li{display:flex;gap:0.6rem;font-size:0.84rem;
+  color:rgba(255,255,255,0.62);font-weight:300;align-items:flex-start}
+.pkg-arr{color:var(--flame);flex-shrink:0;font-size:0.78rem;margin-top:3px}
+
+.addons-box{margin-top:2rem;background:var(--ink2);border:1px solid var(--border);
+  border-radius:14px;padding:2rem}
+.addons-h{font-family:var(--display);font-size:1.5rem;font-weight:800;
+  letter-spacing:0.02em;margin-bottom:1.25rem}
+.addons-chips{display:flex;flex-wrap:wrap;gap:0.6rem}
+.chip{border:1px solid var(--border);border-radius:100px;padding:0.38rem 1rem;
+  font-size:0.8rem;color:rgba(255,255,255,0.55);transition:border-color 0.2s,color 0.2s;cursor:default}
+.chip:hover{border-color:var(--flame);color:#fff}
+.chip strong{color:var(--flame)}
+
+.car-hdr{margin-top:4rem;padding-top:4rem;border-top:1px solid var(--border);margin-bottom:2rem}
+.cars{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.car-card{background:var(--ink2);border:1px solid var(--border);border-radius:10px;
+  padding:1.5rem;transition:border-color 0.2s,transform 0.2s}
+.car-card:hover{border-color:rgba(229,91,10,0.35);transform:translateY(-3px)}
+.cc-name{font-weight:700;font-size:0.95rem;margin-bottom:0.25rem}
+.cc-price{color:var(--flame);font-weight:800;font-size:1.15rem;
+  font-family:var(--display);letter-spacing:0.04em}
+.cc-desc{font-size:0.82rem;color:var(--muted);margin-top:0.5rem;font-weight:300;line-height:1.6}
+
+/* GALLERY */
+.sec-gallery{background:var(--ink2)}
+.gallery-intro{display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.gallery-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);
+  position:relative;transition:transform 0.2s,box-shadow 0.2s}
+.gallery-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.4)}
+.g-ph{aspect-ratio:4/3;background:linear-gradient(135deg,rgba(229,91,10,0.15),rgba(229,91,10,0.04));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:0.5rem;color:var(--muted);font-size:0.82rem}
+.g-ph-ico{font-size:2.5rem;opacity:0.35}
+.g-ph-hint{font-size:0.72rem;color:rgba(255,255,255,0.2)}
+.g-lbl{position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(0deg,rgba(13,15,15,0.95),transparent);
+  padding:1.25rem 1rem 0.85rem;font-size:0.82rem;font-weight:600;color:#fff}
+.g-tag{display:inline-flex;align-items:center;gap:0.4rem;
+  background:var(--flame);color:#fff;font-size:0.68rem;font-weight:800;
+  letter-spacing:0.09em;text-transform:uppercase;padding:0.22rem 0.65rem;
+  border-radius:100px;margin-bottom:0.35rem}
+.g-tag.after{background:var(--gold);color:var(--ink)}
+
+/* REVIEWS */
+.sec-reviews{background:var(--ink)}
+.reviews-hdr{display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
+.rev-overall{display:flex;align-items:center;gap:1rem}
+.rev-score{font-family:var(--display);font-size:3.5rem;font-weight:800;color:#fff;line-height:1}
+.rev-stars-big{color:var(--gold);font-size:1.4rem;letter-spacing:0.05em}
+.rev-count{font-size:0.82rem;color:var(--muted);margin-top:0.2rem}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.rev-card{background:var(--ink2);border:1px solid var(--border);border-radius:14px;
+  padding:1.75rem;transition:border-color 0.2s,transform 0.2s}
+.rev-card:hover{border-color:rgba(229,91,10,0.3);transform:translateY(-3px)}
+.rev-stars{color:var(--gold);font-size:1rem;letter-spacing:0.04em;margin-bottom:0.85rem}
+.rev-text{font-size:0.87rem;color:rgba(255,255,255,0.67);line-height:1.8;
+  font-weight:300;font-style:italic;margin-bottom:1.1rem}
+.rev-author{display:flex;align-items:center;gap:0.75rem}
+.rev-avatar{width:36px;height:36px;border-radius:50%;background:rgba(229,91,10,0.2);
+  border:1px solid rgba(229,91,10,0.3);display:flex;align-items:center;
+  justify-content:center;font-size:1rem;flex-shrink:0}
+.rev-name{font-size:0.85rem;font-weight:700}
+.rev-suburb{font-size:0.75rem;color:var(--muted);font-weight:400}
+
+/* WHY */
+.sec-why{background:var(--ink2)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
+.why-card{background:var(--ink);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem;transition:border-color 0.2s,transform 0.2s}
+.why-card:hover{border-color:rgba(229,91,10,0.3);transform:translateY(-3px)}
+.why-ico{font-size:1.8rem;width:52px;height:52px;background:rgba(229,91,10,0.1);
+  border:1px solid rgba(229,91,10,0.2);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+.why-title{font-weight:700;font-size:0.95rem;margin-bottom:0.4rem}
+.why-desc{font-size:0.84rem;color:var(--muted);line-height:1.72;font-weight:300}
+
+/* SUBURBS */
+.sec-suburbs{background:var(--ink)}
+.suburbs-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.suburb-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.suburb-group h4{font-size:0.77rem;font-weight:800;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--flame);margin-bottom:0.75rem;
+  padding-bottom:0.5rem;border-bottom:1px solid rgba(229,91,10,0.2)}
+.suburb-group ul{list-style:none;display:flex;flex-direction:column;gap:0.35rem}
+.suburb-group ul li{font-size:0.84rem;color:var(--muted);font-weight:300;
+  display:flex;align-items:center;gap:0.4rem}
+.suburb-group ul li::before{content:'·';color:var(--flame);font-size:1.1rem;line-height:1}
+.suburbs-cta{background:var(--ink2);border:1px solid var(--border);
+  border-radius:14px;padding:2rem}
+.sub-cta-title{font-family:var(--display);font-size:2rem;font-weight:800;
+  letter-spacing:0.02em;margin-bottom:0.75rem}
+.sub-cta-text{font-size:0.9rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:1.5rem}
+.sub-cta-phone{display:flex;align-items:center;gap:1rem;
+  background:rgba(229,91,10,0.1);border:1px solid rgba(229,91,10,0.25);
+  border-radius:10px;padding:1rem 1.25rem;margin-bottom:1rem;cursor:pointer;
+  transition:background 0.2s}
+.sub-cta-phone:hover{background:rgba(229,91,10,0.18)}
+.scp-ico{font-size:1.4rem}
+.scp-lbl{font-size:0.72rem;color:var(--muted);letter-spacing:0.08em;
+  text-transform:uppercase;font-weight:600}
+.scp-num{font-family:var(--display);font-size:1.8rem;font-weight:800;color:#fff;line-height:1.1}
+
+/* FAQS */
+.sec-faqs{background:var(--ink2)}
+.faq-layout{display:grid;grid-template-columns:300px 1fr;gap:5rem;align-items:start}
+.faq-side p{font-size:0.93rem;color:var(--muted);line-height:1.85;font-weight:300;margin-top:1rem}
+.faq-list{border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:last-child{border-bottom:none}
+.faq-btn{width:100%;background:none;border:none;display:flex;justify-content:space-between;
+  align-items:center;padding:1.35rem 1.75rem;cursor:pointer;text-align:left;
+  font-family:var(--body);font-size:0.93rem;font-weight:600;color:#fff;
+  transition:background 0.2s;gap:1rem}
+.faq-btn:hover{background:rgba(255,255,255,0.03)}
+.faq-btn.open{background:rgba(229,91,10,0.07)}
+.faq-ch{width:28px;height:28px;flex-shrink:0;background:rgba(229,91,10,0.1);
+  border:1px solid rgba(229,91,10,0.28);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--flame);font-size:0.72rem;transition:transform 0.3s,background 0.3s}
+.faq-btn.open .faq-ch{transform:rotate(180deg);background:var(--flame);color:#fff;border-color:var(--flame)}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height 0.38s ease,padding 0.3s;padding:0 1.75rem}
+.faq-ans.open{max-height:320px;padding:0 1.75rem 1.35rem}
+.faq-ans p{font-size:0.88rem;color:var(--muted);line-height:1.85;font-weight:300}
+
+/* CONTACT */
+.sec-contact{background:var(--ink)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact-l p{font-size:0.93rem;color:var(--muted);line-height:1.85;font-weight:300;margin-bottom:2rem;margin-top:1rem}
+.cdetails{display:flex;flex-direction:column;gap:1rem}
+.cd{display:flex;gap:1rem;align-items:flex-start;padding:1.2rem;
+  background:var(--ink2);border:1px solid var(--border);border-radius:10px;transition:border-color 0.2s}
+.cd:hover{border-color:rgba(229,91,10,0.3)}
+.cd-ico{font-size:1.2rem;width:42px;height:42px;flex-shrink:0;
+  background:rgba(229,91,10,0.1);border:1px solid rgba(229,91,10,0.22);
+  border-radius:8px;display:flex;align-items:center;justify-content:center}
+.cd-lbl{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);font-weight:700;margin-bottom:0.15rem}
+.cd-val{font-size:0.95rem;font-weight:600}
+.cd-sub{font-size:0.78rem;color:var(--muted);font-weight:300}
+.cform{background:var(--ink2);border:1px solid var(--border);border-radius:16px;
+  padding:2.5rem;position:relative;overflow:hidden}
+.cform::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--flame),var(--flame2),transparent)}
+.cform-title{font-family:var(--display);font-size:2rem;font-weight:800;
+  letter-spacing:0.02em;margin-bottom:0.4rem}
+.cform-sub{font-size:0.82rem;color:var(--muted);margin-bottom:2rem;font-weight:300}
+.frow{display:flex;gap:1rem}
+.fg{display:flex;flex-direction:column;gap:0.4rem;flex:1;margin-bottom:1rem}
+.fg label{font-size:0.72rem;font-weight:700;letter-spacing:0.09em;
+  text-transform:uppercase;color:rgba(255,255,255,0.4)}
+.fg input,.fg select,.fg textarea{background:rgba(255,255,255,0.04);
+  border:1.5px solid var(--border);border-radius:var(--rad);color:#fff;
+  font-family:var(--body);font-size:0.91rem;padding:0.72rem 1rem;outline:none;
+  transition:border-color 0.2s,background 0.2s;width:100%;font-weight:300}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,0.2)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  border-color:rgba(229,91,10,0.6);background:rgba(229,91,10,0.04)}
+.fg select option{background:var(--ink2)}
+.fg textarea{resize:vertical;min-height:95px}
+.f-submit{width:100%;background:var(--flame);color:#fff;border:none;
+  border-radius:var(--rad);font-family:var(--body);font-size:0.9rem;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;padding:1rem;cursor:pointer;
+  transition:background 0.2s,transform 0.15s,box-shadow 0.2s;
+  box-shadow:0 6px 22px rgba(229,91,10,0.32);margin-top:0.5rem}
+.f-submit:hover{background:var(--flame2);transform:translateY(-2px);
+  box-shadow:0 12px 32px rgba(229,91,10,0.48)}
+.f-note{font-size:0.74rem;color:rgba(255,255,255,0.22);text-align:center;margin-top:0.75rem}
+
+/* FOOTER */
+footer{background:var(--ink);border-top:1px solid var(--border);padding:2.5rem 2rem}
+.foot-in{max-width:var(--max);margin:auto;display:flex;align-items:center;
+  justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.foot-logo{font-family:var(--display);font-size:1.15rem;font-weight:800;color:#fff}
+.foot-logo span{color:var(--flame)}
+.foot-copy{font-size:0.78rem;color:var(--muted)}
+.foot-links{display:flex;gap:1.5rem}
+.foot-links a{font-size:0.78rem;color:var(--muted);transition:color 0.2s}
+.foot-links a:hover{color:var(--flame)}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  .hero-in,.about-grid,.contact-grid,.suburbs-layout{grid-template-columns:1fr;gap:3rem}
+  .hero-card{display:none}
+  .pkgs,.cars,.reviews-grid,.gallery-grid,.why-grid{grid-template-columns:1fr 1fr}
+  .faq-layout{grid-template-columns:1fr;gap:3rem}
+}
+@media(max-width:600px){
+  .pkgs,.cars,.reviews-grid,.gallery-grid,.why-grid{grid-template-columns:1fr}
+  .frow{flex-direction:column}
+  .suburb-cols{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">📍 Serving All Perth Metro Suburbs — Joondalup to Mandurah &nbsp;|&nbsp; <a href="tel:0400000000">Call Now: 0400 000 000</a></div>
+
+<nav id="navbar">
+  <div class="nav-in">
+    <div class="logo" onclick="gs('hero')"><div class="logo-mark">✦</div>[Your Name] Caravan Detailing</div>
+    <ul class="nav-links">
+      <li><a onclick="gs('about')">About</a></li>
+      <li><a onclick="gs('services')">Services</a></li>
+      <li><a onclick="gs('gallery')">Gallery</a></li>
+      <li><a onclick="gs('reviews')">Reviews</a></li>
+      <li><a onclick="gs('faqs')">FAQs</a></li>
+      <li><a href="tel:0400000000" class="nav-phone-lnk">0400 000 000</a></li>
+      <li><a onclick="gs('contact')" class="nav-btn">Free Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-bg"></div><div class="hero-mesh"></div>
+  <div class="hero-wm">CLEAN</div>
+  <div class="hero-in">
+    <div>
+      <div class="h-badge"><span class="h-badge-dot"></span>Perth's #1 Mobile Caravan Detailing</div>
+      <h1 class="h1"><span>WE BRING THE</span><span class="h1-flame">SHOWROOM</span><span class="h1-out">TO YOU.</span></h1>
+      <p class="hero-sub">Professional mobile caravan and car detailing anywhere in Perth. We come to your home, campsite, or storage — and leave your van looking brand new. No drop-offs. No hassle.</p>
+      <div class="hero-phone">
+        <div class="hero-phone-ico">📞</div>
+        <div>
+          <div class="hero-phone-num"><a href="tel:0400000000">0400 000 000</a></div>
+          <div class="hero-phone-lbl">Call or text for a free quote — we respond fast</div>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <button class="btn-fire" onclick="gs('contact')">Get a Free Quote →</button>
+        <button class="btn-ghost" onclick="gs('services')">View Packages</button>
+      </div>
+      <div class="hero-trust">
+        <div class="ht-item"><span class="ht-dot"></span><strong>100% Mobile</strong> — We come to you</div>
+        <div class="ht-item"><span class="ht-dot"></span><strong>Fully Insured</strong></div>
+        <div class="ht-item"><span class="ht-dot"></span><strong>Perth-Wide</strong> coverage</div>
+        <div class="ht-item"><span class="ht-dot"></span><strong>Weekends</strong> available</div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hc-ph"><div class="hc-ph-ico">🚐</div><div>Add your best before/after photo here</div><div class="hc-ph-hint">Replace with your own image</div></div>
+      <div class="hc-body">
+        <div class="hc-stars">★★★★★</div>
+        <div class="hc-quote">"Absolutely incredible result. Our caravan looked better than the day we bought it. Turned up on time, professional, and the finish was flawless."</div>
+        <div class="hc-author">— Sarah M., Joondalup</div>
+      </div>
+      <div class="hc-stats">
+        <div class="hc-stat"><div class="hcs-n">5<span>★</span></div><div class="hcs-l">Google Rating</div></div>
+        <div class="hc-stat"><div class="hcs-n">200<span>+</span></div><div class="hcs-l">Vans Detailed</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-track">
+    <div class="strip-item">Caravan Detailing <span class="s-dot">✦</span></div>
+    <div class="strip-item">Motorhome Detailing <span class="s-dot">✦</span></div>
+    <div class="strip-item">Ceramic Coating <span class="s-dot">✦</span></div>
+    <div class="strip-item">Paint Correction <span class="s-dot">✦</span></div>
+    <div class="strip-item">Black Streak Removal <span class="s-dot">✦</span></div>
+    <div class="strip-item">Car Detailing Perth <span class="s-dot">✦</span></div>
+    <div class="strip-item">Mobile Detailing Perth <span class="s-dot">✦</span></div>
+    <div class="strip-item">UV Protection <span class="s-dot">✦</span></div>
+    <div class="strip-item">Caravan Detailing <span class="s-dot">✦</span></div>
+    <div class="strip-item">Motorhome Detailing <span class="s-dot">✦</span></div>
+    <div class="strip-item">Ceramic Coating <span class="s-dot">✦</span></div>
+    <div class="strip-item">Paint Correction <span class="s-dot">✦</span></div>
+    <div class="strip-item">Black Streak Removal <span class="s-dot">✦</span></div>
+    <div class="strip-item">Car Detailing Perth <span class="s-dot">✦</span></div>
+    <div class="strip-item">Mobile Detailing Perth <span class="s-dot">✦</span></div>
+    <div class="strip-item">UV Protection <span class="s-dot">✦</span></div>
+  </div>
+</div>
+
+<section id="about" class="sec sec-about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="about-ph">
+          <div class="about-ph-ico">🚐</div>
+          <div>Add your photo here</div>
+          <div class="about-ph-hint">e.g. you working on a caravan on-site in Perth</div>
+          <div class="about-float"><div class="af-num">200+</div><div class="af-lbl">Perth caravans detailed &amp; counting</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">About Us</div>
+        <h2 class="sh2">PERTH'S TRUSTED MOBILE DETAILING EXPERT</h2>
+        <p class="ssub">Hi, I'm [Your Name] — and I started this business because I believe your caravan deserves professional-level care without the hassle of taking it somewhere.</p>
+        <p class="ssub" style="margin-top:1rem">I'm a fully mobile, fully insured detailing specialist based in Perth. My self-contained rig brings everything needed right to your door — whether you're in Joondalup, Fremantle, Rockingham, or anywhere in between. If you're searching for <strong style="color:#fff">mobile caravan detailing Perth</strong> or <strong style="color:#fff">caravan detailing near me</strong>, you've found the right place.</p>
+        <ul class="about-list" style="margin-top:1.75rem">
+          <li><span class="a-tick">✓</span>Fully insured — public liability covered on every job</li>
+          <li><span class="a-tick">✓</span>Self-contained mobile rig — no need for your power or water</li>
+          <li><span class="a-tick">✓</span>Professional products safe for fibreglass, aluminium &amp; rubber seals</li>
+          <li><span class="a-tick">✓</span>Experience with pop-tops, fifth-wheelers, motorhomes &amp; slide-outs</li>
+          <li><span class="a-tick">✓</span>Upfront honest pricing — no surprises on the day</li>
+          <li><span class="a-tick">✓</span>Products chosen specifically for Perth's harsh UV and heat conditions</li>
+        </ul>
+        <div style="margin-top:2rem"><button class="btn-fire" onclick="gs('contact')">Book a Detail →</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="sec sec-services">
+  <div class="wrap">
+    <div class="pkg-hdr">
+      <div>
+        <div class="eyebrow">Packages &amp; Pricing</div>
+        <h2 class="sh2">CARAVAN DETAILING PACKAGES</h2>
+        <p class="ssub">Three packages built around caravans. All prices are <em>from</em> — final quote based on your van's size and condition.</p>
+      </div>
+      <button class="btn-fire" onclick="gs('contact')">Get a Quote</button>
+    </div>
+    <div class="pkgs">
+      <div class="pkg rv">
+        <div class="pkg-top"><div class="pkg-ico">🧼</div><div class="pkg-pr-wrap"><div class="pkg-from">From</div><div class="pkg-pr"><sup>$</sup>250</div></div></div>
+        <div class="pkg-name">THE ESSENTIAL</div>
+        <p class="pkg-desc">A thorough maintenance detail — perfect after short trips or as a seasonal freshen-up.</p>
+        <div class="pkg-hr"></div>
+        <ul class="pkg-list">
+          <li><span class="pkg-arr">→</span>Full exterior hand wash &amp; rinse</li>
+          <li><span class="pkg-arr">→</span>Wheel arch &amp; tyre clean</li>
+          <li><span class="pkg-arr">→</span>Window and skylight clean</li>
+          <li><span class="pkg-arr">→</span>Interior vacuum and surface wipe-down</li>
+          <li><span class="pkg-arr">→</span>Awning rinse and clean</li>
+          <li><span class="pkg-arr">→</span>Tyre dressing applied</li>
+        </ul>
+      </div>
+      <div class="pkg best rv">
+        <div class="pkg-pop">Most Popular</div>
+        <div class="pkg-top"><div class="pkg-ico">✨</div><div class="pkg-pr-wrap"><div class="pkg-from">From</div><div class="pkg-pr"><sup>$</sup>450</div></div></div>
+        <div class="pkg-name">THE SIGNATURE</div>
+        <p class="pkg-desc">Our bestseller. Comprehensive inside-and-out — your van leaves protected, polished and road-ready.</p>
+        <div class="pkg-hr"></div>
+        <ul class="pkg-list">
+          <li><span class="pkg-arr">→</span>Everything in The Essential</li>
+          <li><span class="pkg-arr">→</span>Clay bar treatment on exterior panels</li>
+          <li><span class="pkg-arr">→</span>Full interior deep clean (kitchen, bathroom, upholstery)</li>
+          <li><span class="pkg-arr">→</span>UV protectant on all exterior surfaces</li>
+          <li><span class="pkg-arr">→</span>Sealant coat for lasting protection</li>
+          <li><span class="pkg-arr">→</span>Full roof clean and treatment</li>
+          <li><span class="pkg-arr">→</span>Slide-out seals cleaned &amp; conditioned</li>
+        </ul>
+      </div>
+      <div class="pkg rv">
+        <div class="pkg-top"><div class="pkg-ico">🏆</div><div class="pkg-pr-wrap"><div class="pkg-from">From</div><div class="pkg-pr"><sup>$</sup>750</div></div></div>
+        <div class="pkg-name">THE SHOWROOM</div>
+        <p class="pkg-desc">The full works. Paint correction, ceramic coating, and a spotless interior — nothing short of perfection.</p>
+        <div class="pkg-hr"></div>
+        <ul class="pkg-list">
+          <li><span class="pkg-arr">→</span>Everything in The Signature</li>
+          <li><span class="pkg-arr">→</span>Machine polish &amp; paint correction</li>
+          <li><span class="pkg-arr">→</span>Ceramic coating application</li>
+          <li><span class="pkg-arr">→</span>Full upholstery shampoo</li>
+          <li><span class="pkg-arr">→</span>Fibreglass oxidation treatment</li>
+          <li><span class="pkg-arr">→</span>Full vent and seal degreasing</li>
+          <li><span class="pkg-arr">→</span>Post-detail inspection &amp; written report</li>
+        </ul>
+      </div>
+    </div>
+    <div class="addons-box">
+      <div class="addons-h">POPULAR ADD-ONS</div>
+      <div class="addons-chips">
+        <div class="chip">💧 Black streak removal <strong>from $60</strong></div>
+        <div class="chip">🛞 Tyre shine coating <strong>from $30</strong></div>
+        <div class="chip">🔧 Slide-out seal treatment <strong>from $50</strong></div>
+        <div class="chip">🪟 Acrylic window polish <strong>from $40/window</strong></div>
+        <div class="chip">🐾 Pet hair removal <strong>from $50</strong></div>
+        <div class="chip">🏕️ Awning deep clean <strong>from $80</strong></div>
+        <div class="chip">🔋 Solar panel clean <strong>from $40</strong></div>
+        <div class="chip">🪣 Fabric protector spray <strong>from $45</strong></div>
+        <div class="chip">🔩 Checker plate polish <strong>from $60</strong></div>
+        <div class="chip">🪞 Gelcoat restoration <strong>POA</strong></div>
+      </div>
+    </div>
+    <div class="car-hdr">
+      <div class="eyebrow">Also Available</div>
+      <h2 class="sh2">CAR DETAILING — DONE AT THE SAME TIME</h2>
+      <p class="ssub">Add your tow vehicle to any caravan booking for a discounted rate. One visit, everything sorted.</p>
+    </div>
+    <div class="cars">
+      <div class="car-card rv"><div class="cc-name">Wash &amp; Vacuum</div><div class="cc-price">FROM $80</div><div class="cc-desc">Hand wash, interior vacuum, windows cleaned. A proper freshen-up done right.</div></div>
+      <div class="car-card rv"><div class="cc-name">Full Interior &amp; Exterior</div><div class="cc-price">FROM $180</div><div class="cc-desc">Complete deep clean inside and out, leather conditioning and full dashboard treatment.</div></div>
+      <div class="car-card rv"><div class="cc-name">Paint Correction &amp; Seal</div><div class="cc-price">FROM $320</div><div class="cc-desc">Machine polish, swirl removal, and protective sealant for a showroom-quality result.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="sec sec-gallery">
+  <div class="wrap">
+    <div class="gallery-intro">
+      <div>
+        <div class="eyebrow">Our Work</div>
+        <h2 class="sh2">BEFORE &amp; AFTER RESULTS</h2>
+        <p class="ssub">Real vans, real results. Add your own before/after photos here — nothing sells your work like proof.</p>
+      </div>
+      <button class="btn-ghost" onclick="gs('contact')">Book Your Detail</button>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-card rv"><div class="g-ph"><div class="g-ph-ico">📸</div><div>Before photo</div><div class="g-ph-hint">Replace with your image</div></div><div class="g-lbl"><div class="g-tag">BEFORE</div>2023 Jayco Expanda — Returned from Kimberley trip</div></div>
+      <div class="gallery-card rv"><div class="g-ph"><div class="g-ph-ico">✨</div><div>After photo</div><div class="g-ph-hint">Replace with your image</div></div><div class="g-lbl"><div class="g-tag after">AFTER</div>The Signature Package — Full detail &amp; UV treatment</div></div>
+      <div class="gallery-card rv"><div class="g-ph"><div class="g-ph-ico">📸</div><div>Before photo</div><div class="g-ph-hint">Replace with your image</div></div><div class="g-lbl"><div class="g-tag">BEFORE</div>Fifth-wheeler — 18 months of road dust &amp; oxidation</div></div>
+      <div class="gallery-card rv"><div class="g-ph"><div class="g-ph-ico">✨</div><div>After photo</div><div class="g-ph-hint">Replace with your image</div></div><div class="g-lbl"><div class="g-tag after">AFTER</div>The Showroom — Paint correction &amp; ceramic coat</div></div>
+      <div class="gallery-card rv"><div class="g-ph"><div class="g-ph-ico">📸</div><div>Before photo</div><div class="g-ph-hint">Replace with your image</div></div><div class="g-lbl"><div class="g-tag">BEFORE</div>Pop-top — Black streaks &amp; tired exterior panels</div></div>
+      <div class="gallery-card rv"><div class="g-ph"><div class="g-ph-ico">✨</div><div>After photo</div><div class="g-ph-hint">Replace with your image</div></div><div class="g-lbl"><div class="g-tag after">AFTER</div>The Essential + Black Streak Add-on</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="sec sec-reviews">
+  <div class="wrap">
+    <div class="reviews-hdr">
+      <div><div class="eyebrow">Customer Reviews</div><h2 class="sh2">WHAT PERTH SAYS ABOUT US</h2></div>
+      <div class="rev-overall"><div><div class="rev-score">5.0</div><div class="rev-stars-big">★★★★★</div><div class="rev-count">Based on Google Reviews</div></div></div>
+    </div>
+    <div class="reviews-grid">
+      <div class="rev-card rv"><div class="rev-stars">★★★★★</div><p class="rev-text">"I couldn't believe the difference. Our caravan had been sitting for over a year and was absolutely filthy. Transformed it — the paint looked brand new. Will 100% be booking again before our next trip."</p><div class="rev-author"><div class="rev-avatar">😊</div><div><div class="rev-name">Sarah M.</div><div class="rev-suburb">Joondalup, Perth</div></div></div></div>
+      <div class="rev-card rv"><div class="rev-stars">★★★★★</div><p class="rev-text">"Incredibly professional. Turned up exactly on time, explained everything he was going to do, and the result was outstanding. Our fifth-wheeler looks better than when we bought it. Highly recommend for caravan detailing in Perth."</p><div class="rev-author"><div class="rev-avatar">🙂</div><div><div class="rev-name">Dave &amp; Leanne T.</div><div class="rev-suburb">Rockingham, Perth</div></div></div></div>
+      <div class="rev-card rv"><div class="rev-stars">★★★★★</div><p class="rev-text">"Had the Showroom package done on our motorhome. The ceramic coating is brilliant — easy to clean and the shine is incredible. Worth every cent. Great bloke too, very easy to deal with."</p><div class="rev-author"><div class="rev-avatar">😄</div><div><div class="rev-name">Mark R.</div><div class="rev-suburb">Mandurah, Perth</div></div></div></div>
+      <div class="rev-card rv"><div class="rev-stars">★★★★★</div><p class="rev-text">"The black streaks on our van had been driving me crazy for two years. Got rid of every single one. Also sealed the roof properly — absolute legend. Found him searching caravan detailing near me and so glad I did."</p><div class="rev-author"><div class="rev-avatar">😁</div><div><div class="rev-name">Trish W.</div><div class="rev-suburb">Morley, Perth</div></div></div></div>
+      <div class="rev-card rv"><div class="rev-stars">★★★★★</div><p class="rev-text">"Booked for both our caravan and our Land Cruiser — both came up absolutely immaculate. Great value, quick response to my enquiry, and he worked around our schedule. Couldn't ask for more."</p><div class="rev-author"><div class="rev-avatar">🤩</div><div><div class="rev-name">Jim &amp; Carol S.</div><div class="rev-suburb">Ellenbrook, Perth</div></div></div></div>
+      <div class="rev-card rv"><div class="rev-stars">★★★★★</div><p class="rev-text">"Second time using and just as good as the first. Our Jayco Expanda looks incredible. Punctual, thorough, and really knows caravans inside and out. Will keep booking for every trip prep."</p><div class="rev-author"><div class="rev-avatar">🥰</div><div><div class="rev-name">Nicole B.</div><div class="rev-suburb">Karrinyup, Perth</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="sec sec-why">
+  <div class="wrap">
+    <div class="eyebrow">Why Choose Us</div>
+    <h2 class="sh2">DETAILING DONE RIGHT, EVERY TIME</h2>
+    <div class="why-grid">
+      <div class="why-card rv"><div class="why-ico">🚐</div><div class="why-title">100% Mobile</div><div class="why-desc">Our fully self-contained rig comes to you — home, work, campsite, or storage. Anywhere in Perth. No drop-offs, ever.</div></div>
+      <div class="why-card rv"><div class="why-ico">☀️</div><div class="why-title">Built for Perth's Climate</div><div class="why-desc">WA's UV and heat are brutal on caravans. Every product we use is chosen specifically for WA conditions — your finish lasts longer.</div></div>
+      <div class="why-card rv"><div class="why-ico">🛡️</div><div class="why-title">Fully Insured</div><div class="why-desc">We carry full public liability insurance. You can relax knowing your van is in safe, professional hands from start to finish.</div></div>
+      <div class="why-card rv"><div class="why-ico">💬</div><div class="why-title">No Surprises Pricing</div><div class="why-desc">Clear quote before we start — no hidden fees, no upselling on the day. Honest service and genuine results every time.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="suburbs" class="sec sec-suburbs">
+  <div class="wrap">
+    <div class="eyebrow">Service Areas</div>
+    <h2 class="sh2">WE COME TO YOU ACROSS PERTH</h2>
+    <div class="suburbs-layout">
+      <div>
+        <p class="ssub">We cover the full Perth metro area and surrounds. Can't see your suburb? Give us a call — we cover more areas than listed and can often accommodate requests outside our standard zones.</p>
+        <div class="suburb-cols">
+          <div class="suburb-group"><h4>North Perth</h4><ul><li>Joondalup</li><li>Wanneroo</li><li>Clarkson</li><li>Butler</li><li>Kingsley</li><li>Karrinyup</li><li>Scarborough</li></ul></div>
+          <div class="suburb-group"><h4>South Perth</h4><ul><li>Fremantle</li><li>Cockburn</li><li>Rockingham</li><li>Mandurah</li><li>Baldivis</li><li>Canning Vale</li><li>Willetton</li></ul></div>
+          <div class="suburb-group"><h4>East &amp; Hills</h4><ul><li>Midland</li><li>Ellenbrook</li><li>Swan Valley</li><li>Kalamunda</li><li>Mundaring</li><li>Armadale</li><li>Morley</li></ul></div>
+        </div>
+      </div>
+      <div class="suburbs-cta rv">
+        <div class="sub-cta-title">NOT SURE IF WE COVER YOUR AREA?</div>
+        <p class="sub-cta-text">Give us a quick call or text and we'll let you know straight away. We cover most of the Perth metro and can often travel further for larger jobs.</p>
+        <div class="sub-cta-phone"><div class="scp-ico">📞</div><div><div class="scp-lbl">Call or Text</div><div class="scp-num"><a href="tel:0400000000" style="color:#fff">0400 000 000</a></div></div></div>
+        <button class="btn-fire" style="width:100%" onclick="gs('contact')">Request a Quote Online →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faqs" class="sec sec-faqs">
+  <div class="wrap">
+    <div class="faq-layout">
+      <div class="faq-side">
+        <div class="eyebrow">FAQs</div>
+        <h2 class="sh2">GOT QUESTIONS?</h2>
+        <p>Everything you need to know about mobile caravan detailing in Perth. Can't find your answer — just give us a call.</p>
+        <div style="margin-top:2rem"><button class="btn-fire" onclick="gs('contact')">Ask Us →</button></div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-btn" onclick="tFaq(this)">What is caravan detailing and why does my van need it?<span class="faq-ch">▾</span></button><div class="faq-ans"><p>Caravan detailing is a thorough, multi-step clean and protection process that goes way beyond a standard wash. It removes road grime, black streaks, oxidation, and built-up residue, then applies protective products to keep your van looking great for longer. In Perth's harsh UV conditions, regular detailing protects your investment and extends the life of your van's surfaces.</p></div></div>
+        <div class="faq-item"><button class="faq-btn" onclick="tFaq(this)">How does your mobile service work?<span class="faq-ch">▾</span></button><div class="faq-ans"><p>Simple — you book, we come to you. Our van is fully self-contained with its own water supply and power, so we don't need access to your hose or power points (though it helps if available). We can come to your home, workplace, caravan park, or storage facility anywhere in Perth.</p></div></div>
+        <div class="faq-item"><button class="faq-btn" onclick="tFaq(this)">How does Perth's weather affect my caravan's surfaces?<span class="faq-ch">▾</span></button><div class="faq-ans"><p>Perth's intense UV and heat causes real damage over time — fading gelcoat, cracking seals, and oxidising fibreglass are all common issues for WA caravanners. The sealants and ceramic coatings we use are specifically chosen for WA conditions. We recommend booking early-morning slots in summer to get the best results.</p></div></div>
+        <div class="faq-item"><button class="faq-btn" onclick="tFaq(this)">How long does a caravan detail take?<span class="faq-ch">▾</span></button><div class="faq-ans"><p>The Essential takes around 2–3 hours, The Signature is typically 4–5 hours, and The Showroom can take a full day (6–8 hours). Larger motorhomes or fifth-wheelers may take a little longer. We'll give you a realistic time estimate when you book — and we won't rush the job.</p></div></div>
+        <div class="faq-item"><button class="faq-btn" onclick="tFaq(this)">What's the difference between a wash and a full detail?<span class="faq-ch">▾</span></button><div class="faq-ans"><p>A wash removes surface dirt. A full detail goes much deeper — clay bar treatment, interior deep clean, UV protection, sealants, and targeted treatments for specific issues like black streaks or oxidation. A proper detail can add years to the life of your van's exterior and significantly improve its resale value.</p></div></div>
+        <div class="faq-item"><button class="faq-btn" onclick="tFaq(this)">How often should I get my caravan detailed?<span class="faq-ch">▾</span></button><div class="faq-ans"><p>For regular travellers, every 3–6 months is ideal. If your van has been in storage or just returned from a long trip, a full detail before and after the season is recommended. Perth's harsh sun means UV protection top-ups are worth doing more frequently than most people realise.</p></div></div>
+        <div class="faq-item"><button class="faq-btn" onclick="tFaq(this)">Can you detail my motorhome or fifth-wheeler?<span class="faq-ch">▾</span></button><div class="faq-ans"><p>Absolutely. We detail all types of recreational vehicles — standard caravans, pop-tops, fifth-wheelers, motorhomes, camper trailers, and more. Larger vehicles may take longer and have adjusted pricing — just let us know what you have when you enquire and we'll give you an accurate quote.</p></div></div>
+        <div class="faq-item"><button class="faq-btn" onclick="tFaq(this)">Do I need to prepare anything before you arrive?<span class="faq-ch">▾</span></button><div class="faq-ans"><p>Not much! Just make sure we have clear access to your van with enough room to work around it. Removing loose exterior items is helpful. For interior packages, clearing personal belongings from cupboards and benches is appreciated — we'll handle everything else.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="sec sec-contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-l">
+        <div class="eyebrow">Get In Touch</div>
+        <h2 class="sh2">GET YOUR FREE QUOTE TODAY</h2>
+        <p>Whether you're after a one-off detail before a big trip or regular maintenance all year — get in touch and we'll come back to you with a tailored price, usually within a few hours.</p>
+        <div class="cdetails">
+          <div class="cd rv"><div class="cd-ico">📞</div><div><div class="cd-lbl">Phone / Text</div><div class="cd-val">0400 000 000</div><div class="cd-sub">Prefer a text? We respond fast.</div></div></div>
+          <div class="cd rv"><div class="cd-ico">📧</div><div><div class="cd-lbl">Email</div><div class="cd-val">hello@yourname-detailing.com.au</div><div class="cd-sub">Include van size &amp; location for a quick quote.</div></div></div>
+          <div class="cd rv"><div class="cd-ico">📍</div><div><div class="cd-lbl">Service Area</div><div class="cd-val">Perth Metro &amp; Surrounds</div><div class="cd-sub">Joondalup to Mandurah &amp; everything in between.</div></div></div>
+          <div class="cd rv"><div class="cd-ico">🕐</div><div><div class="cd-lbl">Hours</div><div class="cd-val">Mon – Sat, 7am – 5pm</div><div class="cd-sub">Sunday bookings available on request.</div></div></div>
+        </div>
+      </div>
+      <div class="cform rv">
+        <div class="cform-title">REQUEST A QUOTE</div>
+        <div class="cform-sub">Fill in your details and we'll get back to you with a tailored price — usually within a few hours.</div>
+        <div class="frow"><div class="fg"><label>First Name</label><input type="text" placeholder="Jane"/></div><div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"/></div></div>
+        <div class="frow"><div class="fg"><label>Phone</label><input type="tel" placeholder="04XX XXX XXX"/></div><div class="fg"><label>Suburb</label><input type="text" placeholder="e.g. Karrinyup"/></div></div>
+        <div class="fg"><label>What needs detailing?</label><select><option value="">— Select —</option><option>Caravan only</option><option>Motorhome only</option><option>Fifth-wheeler</option><option>Caravan + Tow Vehicle</option><option>Car only</option></select></div>
+        <div class="fg"><label>Package Interest</label><select><option value="">— Select —</option><option>The Essential (from $250)</option><option>The Signature (from $450)</option><option>The Showroom (from $750)</option><option>Not sure — please advise</option></select></div>
+        <div class="fg"><label>Message (Optional)</label><textarea placeholder="e.g. van size, current condition, preferred dates, add-ons you're interested in…"></textarea></div>
+        <button class="f-submit">Send My Enquiry →</button>
+        <p class="f-note">We respond within a few hours during business hours. No spam, ever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-logo">[Your Name] <span>Caravan Detailing</span></div>
+    <div class="foot-copy">© 2025 [Your Name] Caravan Detailing · ABN XX XXX XXX XXX · Mobile Caravan Detailing Perth</div>
+    <div class="foot-links"><a href="tel:0400000000">0400 000 000</a><a href="mailto:hello@yourname-detailing.com.au">Email Us</a><a href="#">Privacy Policy</a></div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40));
+function gs(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'})}
+function tFaq(btn){
+  const a=btn.nextElementSibling,open=btn.classList.contains('open');
+  document.querySelectorAll('.faq-btn').forEach(b=>{b.classList.remove('open');b.nextElementSibling.classList.remove('open')});
+  if(!open){btn.classList.add('open');a.classList.add('open')}
+}
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
